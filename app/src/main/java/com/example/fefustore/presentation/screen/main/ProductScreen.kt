@@ -43,6 +43,7 @@ import coil.compose.rememberAsyncImagePainter
 import com.example.fefustore.R
 import com.example.fefustore.data.api.ProductApiService
 import com.example.fefustore.domain.model.Product
+import com.example.fefustore.presentation.screen.main.navigation.MainScreenNavRoute
 import com.example.fefustore.presentation.ui.component.BottomProductBar
 import com.example.fefustore.presentation.ui.theme.SfProTextBold
 import com.example.fefustore.presentation.ui.theme.SfProTextRegular
@@ -96,7 +97,13 @@ fun ProductScreen(
                     modifier = Modifier
                         .zIndex(2f)
                         .windowInsetsPadding(WindowInsets.navigationBars),
-                    navController = navController
+                    navController = navController,
+                    onClick = {
+                        navController.navigate(MainScreenNavRoute.Cart) {
+                            popUpTo(MainScreenNavRoute.Catalog) { inclusive = false }
+                            launchSingleTop = true
+                        }
+                    }
                 )
             }
         }

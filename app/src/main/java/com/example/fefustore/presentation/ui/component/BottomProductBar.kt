@@ -32,7 +32,8 @@ fun BottomProductBar(
     selectedSize: String,
     onSelectedSize: (String) -> Unit,
     modifier: Modifier,
-    navController: NavController? = null
+    navController: NavController? = null,
+    onClick: () -> Unit = {}
 ) {
     Box(
         modifier = Modifier
@@ -81,12 +82,7 @@ fun BottomProductBar(
                 Spacer(modifier = Modifier.height(12.dp))
 
                 ButtonCart(
-                    onClick = {
-                        navController?.navigate("Cart") {
-                            popUpTo(0) { inclusive = true }
-                            launchSingleTop = true
-                        }
-                    },
+                    onClick = onClick,
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(
