@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.shadow.Shadow
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.fefustore.domain.model.Product
 import com.example.fefustore.presentation.ui.theme.SfProTextSemibold
 
@@ -30,7 +31,8 @@ fun BottomProductBar(
     selectSize: List<String>,
     selectedSize: String,
     onSelectedSize: (String) -> Unit,
-    modifier: Modifier
+    modifier: Modifier,
+    navController: NavController? = null
 ) {
     Box(
         modifier = Modifier
@@ -79,7 +81,12 @@ fun BottomProductBar(
                 Spacer(modifier = Modifier.height(12.dp))
 
                 ButtonCart(
-                    onClick = {},
+                    onClick = {
+                        navController?.navigate("Cart") {
+                            popUpTo(0) { inclusive = true }
+                            launchSingleTop = true
+                        }
+                    },
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Text(

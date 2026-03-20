@@ -95,7 +95,8 @@ fun ProductScreen(
                     onSelectedSize = { selectedSize = it },
                     modifier = Modifier
                         .zIndex(2f)
-                        .windowInsetsPadding(WindowInsets.navigationBars)
+                        .windowInsetsPadding(WindowInsets.navigationBars),
+                    navController = navController
                 )
             }
         }

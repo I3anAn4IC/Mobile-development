@@ -41,9 +41,6 @@ fun CatalogScreen(
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
-    var selectedProduct by remember { mutableStateOf<Product?>(null) }
-    var isBottomSheetVisible by remember { mutableStateOf(false) }
-
     val filters = listOf(
         "Все",
         "Новинки",

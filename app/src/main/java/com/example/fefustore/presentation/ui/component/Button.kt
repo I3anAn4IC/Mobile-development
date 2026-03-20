@@ -57,3 +57,24 @@ fun ButtonCart(
         }
     }
 }
+
+@Composable
+fun ButtonDeleteCart(
+    modifier: Modifier,
+    onClick: () -> Unit,
+    content: @Composable () -> Unit
+) {
+    Button(
+        modifier = modifier,
+        contentPadding = PaddingValues(horizontal = 0.dp, vertical = 0.dp),
+        onClick = onClick,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color(0x00FFFFFF),
+            contentColor = Color(0xFFC0C0C0)
+        )
+    ) {
+        Box() {
+            content()
+        }
+    }
+}

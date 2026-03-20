@@ -1,1 +1,31 @@
-/build
+# Скомпилированные файлы
+*.class
+*.apk
+*.aab
+*.dex
+*.jar
+
+# Сгенерированные файлы
+/build/
+*/build/
+out/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Локальные конфигурации
+local.properties
+*.log
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# Keystore файлы (если есть)
+*.jks
+*.keystore
