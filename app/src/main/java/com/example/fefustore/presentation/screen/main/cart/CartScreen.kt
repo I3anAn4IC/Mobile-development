@@ -1,5 +1,6 @@
 package com.example.fefustore.presentation.screen.main.cart
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -80,10 +81,13 @@ fun CartScreen(
             Surface(
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
-                    .padding(bottom = 100.dp, start = 16.dp, end = 16.dp)
+                    .padding(bottom = 100.dp, start = 16.dp, end = 16.dp),
+                contentColor = Color(0x00FFFFFF)
             ) {
                 Column(
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0x00FFFFFF))
                 ) {
                     Row(
                         modifier = Modifier.fillMaxWidth(),
